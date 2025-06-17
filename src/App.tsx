@@ -6,6 +6,7 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import CreatePost from "./pages/CreatePost";
 import "./style.css"
+import EditPost from "./pages/editPost";
 
 function app() {
   return (
@@ -16,6 +17,7 @@ function app() {
         <Route path = '/about' element={<About />} />
         <Route path = '*' element={<NotFound />} />
         <Route path = '/create' element={<CreatePost />} />
+        <Route path = '/edit/:id' element={<EditPost />} />
       </Routes>
     </Router>
   )
