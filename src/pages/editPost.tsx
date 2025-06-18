@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import Navbar from "../components/Navbar";
@@ -75,6 +75,7 @@ const EditPost: React.FC = () => {
             />
           </div>
           <button type="submit">Update Post</button>
+          <Link to="/" className="back-link">Go back</Link>
         </form>
       </div>
     </>

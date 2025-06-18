@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import { useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase";
+import { useNavigate, Link } from "react-router-dom";
+import { collection, addDoc} from "firebase/firestore";
 import Navbar from "../components/Navbar";
+import { db } from "../firebase";
 import "../style.css";
 
 const CreatePost: React.FC = () => {
@@ -83,6 +83,7 @@ const CreatePost: React.FC = () => {
                     {errors.body && <p className="error">{errors.body}</p>}
 
                     <button type="submit">Post</button>
+                    <Link to="/" className="back-link">Go back</Link>
                 </form>
 
             </div>
