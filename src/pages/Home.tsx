@@ -61,13 +61,13 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  });
 
   return (
     <>
       <Navbar />
       <div className="container">
-        <h1>Mini Blog</h1>
+        <h1>Blogs</h1>
         {posts.map((post) => (
           <div key={post.id} className="post-preview">
             <h2>{post.title}</h2>
