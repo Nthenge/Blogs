@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import { Helmet } from "react-helmet"
 import "../style.css";
 
 type Post = {
@@ -59,6 +60,15 @@ const PostDetail: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{post.title} | Mini Blog</title>
+        <meta name="description" content={post.body.slice(0, 150)} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.body.slice(0, 150)} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://your-domain.com/post/${post.id}`} />
+      </Helmet>
+
       <Navbar />
       <div className="container">
         <h1>{post.title}</h1>
